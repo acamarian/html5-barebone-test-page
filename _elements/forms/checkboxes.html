@@ -1,0 +1,26 @@
+--- 
+title: Checkboxes
+type: forms
+order: 43
+---
+<p>
+  For checkboxes, the <code>label</code> should come after the <code>input</code> element.
+</p>
+
+<form action="#" class="form">
+  <fieldset>
+    <legend>Checkboxes</legend>
+    <div class="form__group">
+      <input id="first" type="checkbox" name="fruit-1" value="cherry">
+      <label for="first">I like cherry</label>
+    </div>
+    <div class="form__group">
+      <input id="second" type="checkbox" name="fruit-2" value="banana" disabled>
+      <label for="second">I can't like banana</label>
+    </div>
+    <div class="form__group">
+      <input id="third" type="checkbox" name="fruit-3" value="strawberry">
+      <label for="third">I like strawberry</label>
+    </div>
+  </fieldset>
+</form>
