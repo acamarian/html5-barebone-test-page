@@ -1,9 +1,9 @@
 # Site settings
 title: HTML5 Barebone Test Page for Barebook
-email: abuanascamara@gmail.gmail.com
-description: Al-Madina is a solution oriented company in the Import and Export of General Merchandise and Real Estate Agency. With its headquarters in Brikama New Town, The Gambia, Al-Madina provides goods and services with a clear mindset lasting partnership with the customer party. Our goal is to counter every challenge in your efforts to gain satisfaction in the two ends of domestic and business structures.
+email: acamarian66@gmail.com
+description: 
 baseurl: ""
-url: "http://www.almadina.gm" # the base hostname & protocol for your site
+url: "" # the base hostname & protocol for your site
 
 
 # Collections
@@ -19,5 +19,5 @@ markdown: kramdown
 kramdown:
   input: GFM
 sass:
-  sass_dir: _styles
+  sass_dir: public/styles/sass
   style: :compressed
