@@ -2,8 +2,8 @@
 layout: home 
 ---
 
-<header class="page__header">
-  <div class="header__item">
+<header class="page__header center-hv viewport-full">
+  <div class="center-hv__item">
       <h1>HTML5 Barebone Test Page</h1>
       <p>
         This is a HTML5 test page for barebook's User Interface (UI). This document is filled with common HTML elements, which is
@@ -20,7 +20,7 @@ layout: home
   <article class="page__content" role="article">
     {% assign elementsByType = site.elements | sort:"order" | group_by:"type" %} 
     {%  for type in elementsByType %}
-      <section class="categorys">
+      <section class="categorys pad-tb">
       <h2 id="{{ type.name | slugify }}" class="categorys__title">{{ type.name | capitalize }}</h2>
         {% for entry in type.items %} 
           {% include element.html %} 
@@ -30,7 +30,7 @@ layout: home
     {% endfor %}
   </article>
 
-  <aside class="page__aside" role="complementary">
+  <aside class="page__aside pad-all" role="complementary">
 
     <nav role="navigation" class="nav">
         <h2>Table of content</h2>
