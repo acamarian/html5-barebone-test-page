@@ -1,0 +1,22 @@
+// Abstracts Styles
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
+/** 
+ * Centerings
+ * These center items found in a block/parent 
+ */
+
+ // center horizontally and vertically
+ .center-hv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__item {
+        text-align: center;
+        max-width: $container-max-width-small;
+        padding: $vr/2;
+    }
+ }
+

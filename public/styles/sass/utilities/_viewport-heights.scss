@@ -1,0 +1,21 @@
+// Abstracts Styles
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
+/** 
+ * Viewport Heights
+ * These center items found in a block/parent 
+ */
+
+ // Set the view port heigh of the parent container to 100% (full screen)
+ .viewport-full {
+    min-height: 100vh;
+ }
+
+
+ .viewport--adaptable {
+    @include respond-to(screen-m) {
+        min-height: 100vh;
+    }
+    min-height: 60vh; 
+}

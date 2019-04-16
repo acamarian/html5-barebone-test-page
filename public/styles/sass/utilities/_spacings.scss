@@ -1,0 +1,77 @@
+// Abstracts Styles
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
+/** 
+ * Spacings
+ */
+
+ // Paddings
+ .pad-all {
+    @include respond-to(screen-s) {
+        padding: $vr;
+    }
+
+    @include respond-to(screen-m) {
+        padding: $vr*2;
+    }
+
+    @include respond-to(screen-l) {
+        padding: $vr*3;
+    }
+    padding: $vr/2;
+ }
+
+ .pad-tb {
+    @include respond-to(screen-s) {
+        padding-top: $vr;
+        padding-bottom: $vr;
+    }
+
+    @include respond-to(screen-m) {
+        padding-top: $vr*2;
+        padding-bottom: $vr*2;
+    }
+
+    @include respond-to(screen-l) {
+        padding-top: $vr*3;
+        padding-bottom: $vr*3;
+    }
+    padding: $vr/2 0;
+ }
+
+
+
+  // Margins
+  .mag-all {
+    @include respond-to(screen-s) {
+        margin: $vr;
+    }
+
+    @include respond-to(screen-m) {
+        margin: $vr*2;
+    }
+
+    @include respond-to(screen-l) {
+        margin: $vr*3;
+    }
+    margin: $vr/2;
+ }
+
+ .mag-tb {
+    @include respond-to(screen-s) {
+        margin-top: $vr;
+        margin-bottom: $vr;
+    }
+
+    @include respond-to(screen-m) {
+        margin-top: $vr*2;
+        margin-bottom: $vr*2;
+    }
+
+    @include respond-to(screen-l) {
+        margin-top: $vr*3;
+        margin-bottom: $vr*3;
+    }
+    margin: $vr/2 0;
+ }
