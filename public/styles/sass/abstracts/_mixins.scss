@@ -1,0 +1,61 @@
+/** 
+ *  clearfix 
+ */
+@mixin clearfix {
+  &::after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+}
+
+
+
+
+
+/**
+ * Color and text decoration
+ * @param {Color} $color - the color to apply
+ * This applies to links on the page, on different navs, btn links etc
+ * Example:
+  nav a {
+    @include style-link-text(blue);
+  }
+  btn--link {
+    @include style-link-text(red);
+  }
+ */
+@mixin style-link-text($color) {
+  text-decoration: none;
+  color: $color;
+}
+
+
+
+
+
+/**
+ * Breakpoint Graph
+ */
+$breakpoints: (
+  mobile-s:   20em,       // 320px
+  mobile-m:   40em,       // 640px
+  mobile-l:   50em,       // 800px
+  screen-s: 	64em,       // 1024px
+  screen-m: 	80em,       // 1280px
+  screen-l: 	90em        // 1440px
+) !default;
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media(min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown `#{$breakpoint}` in $breakpoints, please check"
+  }
+}
+
+
+
+

@@ -1,0 +1,57 @@
+// Imports
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
+
+// Mixins
+@mixin center-page {
+  margin: 0 auto;
+}
+
+
+/**
+ * Page and Page wrapper
+ */
+.page {
+
+  &__wrapper  {
+    @include center-page;
+    min-width: $wrapper-min-width;
+    max-width: $wrapper-max-width;
+  }
+ }
+
+/**
+ * Wrapper Modifier/s
+ */
+.page__wrapper--90 {
+  @include respond-to(screen-s) {
+    width: 90%;
+  }
+}
+
+
+
+/**
+ * Containers
+ */
+ .container {
+  padding-left: $vr/2; 
+  padding-right: $vr/2; 
+  max-width: $container-max-width;
+ }
+
+/** 
+ * Container Modifiers
+ */
+.container--center {
+  @include center-page;
+}
+
+.container--small {
+  max-width: $container-max-width-small;
+}
+
+.container--large {
+  max-width: $container-max-width-large;
+}

@@ -1,0 +1,73 @@
+// Imports
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    font-family: inherit;
+    color: inherit;
+}
+
+html, 
+body,
+.page__wrapper {
+    min-height: 100%;
+}
+
+
+/**
+ * Media and embedding elements
+ * 1. Figure intrinsic sizing
+ */
+embed,
+iframe,
+img,
+object,
+audio,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+    max-width: max-content; // 1
+}
+
+
+/**
+ * Table
+ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption {
+    caption-side: bottom;
+    text-align: left;
+}
+
+caption, 
+th, 
+td { 
+    text-align: left; 
+    vertical-align: middle;
+ }
+
+
+/**
+ * Form
+ * 1. prevent pointer events found inside buttons to none - https://zellwk.com/blog/css-reset/
+ */
+button * {
+    pointer-events: none; // 1
+}

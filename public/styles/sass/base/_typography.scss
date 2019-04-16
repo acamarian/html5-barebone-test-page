@@ -1,0 +1,157 @@
+// Imports
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
+// Variables
+$type-sans-serif:	'Roboto', sans-serif;
+$type-serif: 	    'Sura', serif;
+$type-code: 	    'source-code-pro', Courier, monospace;
+
+// Base and Typeface
+$base-typeface-body:      $type-sans-serif;
+$base-typeface-headings:  $type-serif;
+$base-line-height:        $baseline;
+
+// Mixins
+@mixin headings-light {
+    font-weight: 400;    
+}
+
+@mixin headings-bold {
+    font-weight: 600;
+}
+
+
+html {
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'liga' 1, 'kern' 1, 'onum' 1;
+}
+
+body {
+    
+    @include respond-to(screen-s)  {
+        font-size: 1.125rem;
+    }
+    @include respond-to(screen-l) {
+        font-size: 1.25rem;
+    }
+    font-size: 1rem;
+    line-height: $base-line-height;
+    color: $grey-900;
+    font-weight: 400;
+    font-style: normal;
+    font-family: $base-typeface-body;
+}
+
+p,
+pre,
+figure,
+ul,
+ol,
+blockquote {
+    &:not(:last-child) {
+        margin-bottom: $vr;
+    }
+}
+
+ul,
+ol,
+blockquote {
+    margin-left: $vr;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @include headings-bold;
+    margin-top: $vr/2;
+    margin-bottom: $vr/2;
+    padding-top: $vr/2;
+    font-family: $base-typeface-headings;
+    color: $black;
+    font-style: normal;  
+    line-height: 1.5;
+    @include respond-to(screen-l) {
+        line-height: 1.75;
+    }
+    
+    &:first-child {
+        margin-top: 0;
+        padding-top: 0;
+    }
+}
+
+.lead-paragraph {
+    @include respond-to(screen-l) {
+        font-size: 1.5rem;
+    }
+    font-size: 1.25rem;
+}
+
+.lead-heading {
+    @include respond-to(screen-l) {
+        font-size: 4.25rem;
+        line-height: 1.25;
+    }
+}
+
+h1 {
+    @include respond-to(screen-s) {
+        font-size: 3.5rem;
+    }
+    line-height: 1.5;
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5,
+h6 {
+    font-size: 1.25rem;
+}
+
+
+small {
+    line-height: 1;
+}
+
+
+/** 
+ * Links
+ */
+a {
+    text-decoration: underline;
+    text-decoration-skip: edges;
+    color: $primary;
+    transition: color 0.1s, background-color 0.1s;
+    
+    &:hover {
+        text-decoration: none;
+        color: $primary-dark;
+    }
+    
+    &:active, 
+    &:focus {
+        color: $primary-dark;
+    }
+
+    &:visited {
+        color: $primary-dark;
+    }
+}
+
+
+
