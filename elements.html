@@ -15,44 +15,44 @@ layout: default
 
 <main class="page__main">
 
-  <article class="page__content" role="article">
+    <article class="page__content" role="article">
     {% assign elementsByType = site.elements | sort:"order" | group_by:"type" %} 
     {%  for type in elementsByType %}
-      <section class="elements-category">
-      <h2 id="{{ type.name | slugify }}" class="elements-category__title">{{ type.name | capitalize }}</h2>
+        <section class="categorys">
+        <h2 id="{{ type.name | slugify }}" class="categorys__title">{{ type.name | capitalize }}</h2>
         {% for entry in type.items %} 
-          {% include element.html %} 
+            {% include element.html %} 
         {% endfor %} 
-      <a href="#top">[Back to Top]</a>
-      </section>
+        <a href="#top">[Back to Top]</a>
+        </section>
     {% endfor %}
-  </article>
+    </article>
 
-  <aside class="page__aside" role="complementary">
+    <aside class="page__aside" role="complementary">
 
-    <nav role="navigation" class="nav">
-        <h2>Table of content</h2>
-        {% assign elementsByType = site.elements | sort:"order" | group_by:"type"  %} 
-        {% for type in elementsByType %}
-        <ul class="nav__list">
-          <li>
-            <a href="#{{ type.name | slugify }}">{{ type.name | capitalize }}</a>
+        <nav role="navigation" class="nav">
+            <h2>Table of content</h2>
+            {% assign elementsByType = site.elements | sort:"order" | group_by:"type"  %} 
+            {% for type in elementsByType %}
             <ul class="nav__list">
-            {% for entry in type.items %}
-              <li>
-                <a href="#{{ entry.title | slugify }}">{{ entry.title }}</a>
-              </li>
-            {% endfor %}
+                <li>
+                <a href="#{{ type.name | slugify }}">{{ type.name | capitalize }}</a>
+                <ul class="nav__list">
+                {% for entry in type.items %}
+                    <li>
+                    <a href="#{{ entry.title | slugify }}">{{ entry.title }}</a>
+                    </li>
+                {% endfor %}
+                </ul>
+                </li>
             </ul>
-          </li>
-        </ul>
-        {% endfor %}
-    </nav>
+            {% endfor %}
+        </nav>
         
-  </aside>
+    </aside>
 
 </main>
 
 <footer class="page__footer">
-  <small>Made with love in the Gambia By A. Camara</small>
+    <small>Made with love in the Gambia By <a href="http://twitter.com/acamarian">A. Camarian</a> - An open source side project</small>
 </footer>
