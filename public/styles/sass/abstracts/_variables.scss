@@ -1,38 +1,38 @@
 /** 
  * Colors
  */
-$red:         hsl(4, 90%, 58%);
-$red-900:     hsl(0, 73%, 41%);
-$blue:        hsl(207, 90%, 54%);
-$green:       hsl(122, 39%, 49%);
-$green-900:   hsl(124, 55%, 24%);
-$orange:      hsl(36, 100%, 50%);
-$orange-900:  hsl(21, 100%, 45%);
-$indigo:      hsl(269, 100%, 36%);
-$indigo-900:  hsl(266, 100%, 25%);
-$teal:        hsl(174, 100%, 29%);
-$teal-800:    hsl(173, 100%, 21%);
+$white:         hsl(0, 0, 100%);
+$black:         hsl(0, 0, 0%);
 
-$white:       hsl(0, 0, 100%);
-$black:       hsl(0, 0, 0%);
+// greys
+$grey-lighter:  hsl(0, 0%, 98%);
+$grey-light:    hsl(0, 0%, 94%);
+$grey:          hsl(0, 0%, 88%);
+$grey-dark:     hsl(0, 0%, 46%);
+$grey-darker:   hsl(0, 0%, 13%);
 
-$grey:        hsl(0, 0%, 62%);
-$grey-100:    hsl(0, 0%, 96%);
-$grey-300:    hsl(0, 0%, 87%);
-$grey-700:    hsl(0, 0%, 38%);
-$grey-900:    hsl(0, 0%, 13%);
+$red:           hsl(1, 71%, 52%);
+$blue:          hsl(205, 69%, 49%);
+$green:         hsl(68, 100%, 30%);
+$orange:        hsl(18, 80%, 44%);
+$purple:        hsl(316, 71%, 21%);
+$purple-dark:   hsl(318, 71%, 15%);
 
 // use these in code
-$primary:             $blue;
-$primary-dark:        $indigo-900;
-$secondary:           $teal;
-$secondary-dark:      $teal-800;
+$primary:                   $grey !default;
+$primary-variant:           $grey-dark !default;
+$secondary:                 $blue !default;
 
-$error:       $red-900;
-$success:     $green-900;
-$warning:     $orange-900; 
+$base-background:           $grey-lighter !default;
+$base-foreground:           $grey-darker !default;
+$foreground-on-primary:     $black !default;
+$foreground-on-secondary:   $black !default;
+
+// Status colors
+$error:       $red;
+$success:     $green;
+$warning:     $orange; 
 $info:        $blue;
-
 
 
 
@@ -43,6 +43,7 @@ $info:        $blue;
  */
 $baseline:        2; // 32 px
 $vr:              $baseline * 1rem; // vertical rhythm
+$base-font-size:  1rem;
 
 $wrapper-min-width:           20em;     // 320px 
 $wrapper-max-width:           120em;    // 1920px
@@ -52,18 +53,40 @@ $container-max-width-large:   90em;     // 1440px
  
 
 
+/** 
+ * Typefaces
+ */
+$type-sans-serif:	'Roboto', sans-serif;
+$type-serif: 	    'Sura', serif;
+$type-code: 	    'source-code-pro', Courier, monospace;
+
+$font-weight-400:   400;
+$font-weight-600:   600;
+$font-weight-700:   700;
+
+// Base Font and colors
+$base-font-family-body:      $type-sans-serif !default;
+$base-font-size:             $base-font-size !default;
+$base-background-color:      $base-background !default;
+$base-font-color:            $base-foreground !default;
+$base-line-height:           $baseline !default;
+$base-font-weight:           $font-weight-400 !default;
+
+$base-font-family-headings:  $type-serif !default;
+$base-font-color-headings:   $black !default;
+
+$link: $blue;
+
 
 
 /** 
- * Border radius and Box shadow
+ * Borders, radius and Box shadows
  */
-$border-radius: (
-    t:   3px,
-    s:   5px,
-    m:  10px,
-    l:  100px
-);
+$base-border:               1px solid $grey !default;
 
-//TODO remove these later
-$grey-border:           1px solid $grey;
+$border-radius-s:           4px !default; 
+$border-radius-m:           8px !default; 
+$border-radius-l:           16px !default;
+$border-radius-rounded:     50% !default;
+
 $box-shadow-light: 0 1px 2px rgba($black, 0.3);

@@ -2,6 +2,9 @@
 @import './abstracts/variables';
 @import './abstracts/mixins';
 
+// Variables
+
+
 
 // Mixins
 @mixin center-page {
@@ -22,9 +25,10 @@
  }
 
 /**
- * Wrapper Modifier/s
+ * page__wrapper--adaptable
+ * This change its width size base on different screen sizes
  */
-.page__wrapper--90 {
+.page__wrapper--adaptable {
   @include respond-to(screen-s) {
     width: 90%;
   }
@@ -54,4 +58,39 @@
 
 .container--large {
   max-width: $container-max-width-large;
+}
+
+
+
+/** 
+ * Page landmarks
+ */
+.page__header {
+  background-color: $primary;
+  color: $foreground-on-primary;
+}
+
+.page__main {
+  
+  @include respond-to(mobile-s) {
+    display: flex;
+  }
+}
+
+.page__content {
+  @include respond-to(mobile-s) {
+    width: 60%;
+  }
+}
+
+.page__aside {
+  @include respond-to(mobile-s) {
+    width: 40%;
+  }
+}
+
+.page__footer {
+  background-color: $primary;
+  color: $foreground-on-primary;
+  padding: $vr*2 0;
 }

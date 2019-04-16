@@ -11,8 +11,6 @@
 
 
 
-
-
 /**
  * Color and text decoration
  * @param {Color} $color - the color to apply
@@ -29,8 +27,6 @@
   text-decoration: none;
   color: $color;
 }
-
-
 
 
 
@@ -55,7 +51,3 @@ $breakpoints: (
     @warn "Unknown `#{$breakpoint}` in $breakpoints, please check"
   }
 }
-
-
-
-

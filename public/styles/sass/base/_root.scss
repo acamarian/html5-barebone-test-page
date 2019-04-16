@@ -41,6 +41,11 @@ figure {
     max-width: max-content; // 1
 }
 
+figcaption {
+    font-style: italic;
+    font-size: small;
+}
+
 
 /**
  * Table
@@ -54,6 +59,8 @@ table {
 caption {
     caption-side: bottom;
     text-align: left;
+    font-style: italic;
+    font-size: small;
 }
 
 caption, 

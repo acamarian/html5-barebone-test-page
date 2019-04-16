@@ -2,23 +2,13 @@
 @import './abstracts/variables';
 @import './abstracts/mixins';
 
-// Variables
-$type-sans-serif:	'Roboto', sans-serif;
-$type-serif: 	    'Sura', serif;
-$type-code: 	    'source-code-pro', Courier, monospace;
-
-// Base and Typeface
-$base-typeface-body:      $type-sans-serif;
-$base-typeface-headings:  $type-serif;
-$base-line-height:        $baseline;
-
 // Mixins
 @mixin headings-light {
-    font-weight: 400;    
+    font-weight: $font-weight-400;    
 }
 
 @mixin headings-bold {
-    font-weight: 600;
+    font-weight: $font-weight-600;
 }
 
 
@@ -28,19 +18,20 @@ html {
 }
 
 body {
-    
     @include respond-to(screen-s)  {
         font-size: 1.125rem;
     }
     @include respond-to(screen-l) {
         font-size: 1.25rem;
     }
-    font-size: 1rem;
+
+    font-family: $base-font-family-body;
+    font-size: $base-font-size;
+    background-color: $base-background-color;
+    color: $base-font-color;
     line-height: $base-line-height;
-    color: $grey-900;
-    font-weight: 400;
+    font-weight: $base-font-weight;
     font-style: normal;
-    font-family: $base-typeface-body;
 }
 
 p,
@@ -67,16 +58,17 @@ h4,
 h5,
 h6 {
     @include headings-bold;
-    margin-top: $vr/2;
-    margin-bottom: $vr/2;
-    padding-top: $vr/2;
-    font-family: $base-typeface-headings;
-    color: $black;
-    font-style: normal;  
-    line-height: 1.5;
     @include respond-to(screen-l) {
         line-height: 1.75;
     }
+
+    margin-top: $vr/2;
+    margin-bottom: $vr/2;
+    padding-top: $vr/2;
+    font-family: $base-font-family-headings;
+    color: $base-font-color-headings;
+    font-style: normal;  
+    line-height: 1.5;
     
     &:first-child {
         margin-top: 0;
@@ -135,23 +127,19 @@ small {
 a {
     text-decoration: underline;
     text-decoration-skip: edges;
-    color: $primary;
+    color: $link;
     transition: color 0.1s, background-color 0.1s;
     
     &:hover {
-        text-decoration: none;
-        color: $primary-dark;
+        @include style-link-text($link);
     }
     
     &:active, 
     &:focus {
-        color: $primary-dark;
+        color: darken($link, 5%);
     }
 
     &:visited {
-        color: $primary-dark;
+        color: darken($link, 5%);
     }
 }
-
-
-
