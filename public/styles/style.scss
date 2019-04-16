@@ -1,6 +1,76 @@
 ---
 ---
+// Abstracts Styles
+@import './abstracts/variables';
+@import './abstracts/mixins';
 
-body {
-    background-color: white;
+
+// Base Styles
+@import './base/reset';
+@import './base/root';
+@import './base/typography';
+@import './base/layout';
+
+.container {
+    @include respond-to(mobile-m) {
+        width: 80%;
+    }
+
+    @include respond-to(mobile-l) {
+        width: 70%;
+    }
+
+    @include respond-to(screen-s) {
+        width: 100%;
+    }
+    
+}
+
+.page__header {
+    display: flex;
+    min-height: 100vh;
+    background-color: #CFD8DC;
+}
+
+.header__item {
+    @include respond-to(screen-s) {
+        max-width: 60%;
+    }
+    @include respond-to(screen-l) {
+        max-width: 50%;
+    }
+    margin: auto;
+    text-align: center;
+}
+
+.page__main {
+    
+    @include respond-to(screen-s) {
+        display: flex;
+    }
+}
+.page__content {
+    @include respond-to(screen-s) {
+       width: 60%;
+       padding: $vr;
+    }
+}
+.page__aside {
+    @include respond-to(screen-s) {
+       width: 40%;
+       padding: $vr;
+    }
+}
+
+.page__footer {
+    background-color: #CFD8DC;
+    padding: $vr*4 0;
+}
+
+.categorys {
+    padding: $vr 0;
+}
+
+.category {
+    padding: $vr/2 0;
 }
