@@ -9,17 +9,19 @@ layout: home
         This is a HTML5 test page for barebook's User Interface (UI). This document is filled with common HTML elements, which is
         use for testing visual feedback whilst building the style-guide. 
       </p>
-      <a class="btn btn--link" href="#">Download</a>
+      <a class="btn btn--link" href="#">
+          Download Source Code
+      </a>
   </div>
 </header>
 
-<main class="page__main">
+<main class="page__main container container--center">
 
   <article class="page__content" role="article">
     {% assign elementsByType = site.elements | sort:"order" | group_by:"type" %} 
     {%  for type in elementsByType %}
-      <section class="elements-category">
-      <h2 id="{{ type.name | slugify }}" class="elements-category__title">{{ type.name | capitalize }}</h2>
+      <section class="categorys">
+      <h2 id="{{ type.name | slugify }}" class="categorys__title">{{ type.name | capitalize }}</h2>
         {% for entry in type.items %} 
           {% include element.html %} 
         {% endfor %} 
@@ -54,5 +56,10 @@ layout: home
 </main>
 
 <footer class="page__footer">
-  <small>Made with love in the Gambia By A. Camara</small>
+  <div class="container container--center">
+      <small>
+          Made with love in the Gambia By <a href="http://twitter.com/acamarian">A. Camarian</a> - An open source side project. 
+          <a href="">AVailable at GitHub</a>
+      </small>
+  </div>
 </footer>
