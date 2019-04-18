@@ -1,0 +1,227 @@
+// Imports
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
+/** 
+ * Normalize+
+ * This a base style on top of the normalize CSS project by nicolaz.
+ * They are group by function
+*/
+
+
+/** 
+ * Main and Sectioning Roots
+ * 1. Disabling double-tap to zoom removes the need for browsers to delay the generation of click events when the user taps the screen.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+    box-sizing: border-box;
+    touch-action: manipulation; // 1
+    -webkit-text-size-adjust: 100%; // 2
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    font-family: inherit;
+    color: inherit;
+}
+
+html, 
+body,
+.page__wrapper {
+    min-height: 100%;
+}
+
+
+
+
+
+/**
+ * Content Sectioning
+ * 1. Render the `main` element consistently in IE.
+ */
+main {
+    display: block; // 1
+}
+
+
+
+
+
+/**
+ * Text content
+ * Applying Vertical rytheme
+ * 1. intric ration on figure
+ */
+p,
+pre,
+figure,
+ul,
+ol,
+blockquote {
+    &:not(:last-child) {
+        margin-bottom: $vr;
+    }
+}
+
+ul,
+ol,
+blockquote {
+    margin-left: $vr;
+}
+
+figure {
+    max-width: max-content; // 1
+}
+
+figcaption {
+    font-style: italic;
+    font-size: 80%;
+}
+
+
+
+
+
+/**
+ * Inline text semantics
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove the bottom border in Chrome 57-
+ * 3. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ * 4. Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+ */
+a {
+    background-color: transparent; // 1
+}
+
+abbr[title] {
+    border-bottom: none; // 2
+    text-decoration: underline; // 3
+    text-decoration: underline dotted; // 3
+}
+
+b,
+strong {
+  font-weight: $font-weight-700;
+}
+
+sub,
+sup { // 4
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+
+
+
+
+
+/**
+ * Image, multimedia and Embedded content
+ */
+embed,
+iframe,
+img,
+object,
+audio,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  border: none;  
+}
+
+
+
+
+
+/**
+ * Table content
+ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption {
+    caption-side: bottom;
+    text-align: left;
+    font-style: italic;
+    font-size: 80%;
+}
+
+caption, 
+th, 
+td { 
+    text-align: left; 
+    vertical-align: middle;
+ }
+
+
+
+
+
+/**
+ * Forms
+ * 1. prevent pointer events found inside buttons to none - https://zellwk.com/blog/css-reset/
+ */
+button * {
+    pointer-events: none; // 1
+}
+
+
+
+
+
+/**
+ * Interactive elements
+ * 1. Add the correct display in Edge, IE 10+, and Firefox.
+ * 2. Add the correct display in all browsers.
+ */
+details {
+    display: block; // 1
+}
+
+summary {
+    display: list-item; // 2
+}
+
+
+
+
+
+/**
+ * Web Components
+ * 1. Add the correct display in IE 10+.
+ */
+template {
+    display: none; // 1
+}
+
+
+
+
+
+/**
+ * Misc
+ * 1. Add the correct display in IE 10.
+ */
+[hidden] { // 1
+    display: none;
+}
