@@ -12,12 +12,13 @@
 }
 
 
-html {
-    text-rendering: optimizeLegibility;
-    font-feature-settings: 'liga' 1, 'kern' 1, 'onum' 1;
-}
 
-body {
+
+
+/**
+ * Main and Sectioning Roots
+ */
+html {
     @include respond-to(screen-s)  {
         font-size: 1.125rem;
     }
@@ -25,32 +26,26 @@ body {
         font-size: 1.25rem;
     }
 
-    font-family: $base-font-family-body;
     font-size: $base-font-size;
+    line-height: $base-line-height;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'liga' 1, 'kern' 1, 'onum' 1;
+}
+
+body {
+    font-family: $base-font-family-body;
     background-color: $base-background-color;
     color: $base-font-color;
-    line-height: $base-line-height;
     font-weight: $base-font-weight;
-    font-style: normal;
 }
 
-p,
-pre,
-figure,
-ul,
-ol,
-blockquote {
-    &:not(:last-child) {
-        margin-bottom: $vr;
-    }
-}
 
-ul,
-ol,
-blockquote {
-    margin-left: $vr;
-}
 
+
+
+/**
+ * Content Sectioning
+ */
 h1,
 h2,
 h3,
@@ -86,7 +81,7 @@ h6 {
 .lead-heading {
     @include respond-to(screen-l) {
         font-size: 4.25rem;
-        line-height: 1.25;
+        line-height: 1.5;
     }
 }
 
@@ -116,14 +111,20 @@ h6 {
 }
 
 
-small {
-    line-height: 1;
-}
 
 
 /** 
- * Links
+ * Text content and Inline text semantics
  */
+pre,
+code,
+kbd,
+samp {
+  font-family: $base-font-family-code; /* 1 */
+  font-size: 1rem; /* 2 */
+}
+
+
 a {
     text-decoration: underline;
     text-decoration-skip: edges;
@@ -142,4 +143,8 @@ a {
     &:visited {
         color: darken($link, 5%);
     }
+}
+
+small {
+    font-size: 80%;
 }
