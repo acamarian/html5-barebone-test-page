@@ -2,7 +2,7 @@
 layout: home 
 ---
 
-<header class="page__header center-hv viewport-full">
+<header class="site-header center-hv viewport-full">
   <div class="center-hv__item">
       <h1>HTML5 Barebone Test Page</h1>
       <p>
@@ -15,47 +15,47 @@ layout: home
   </div>
 </header>
 
-<main class="page__main container container--center">
+<main>
+  <div class="content container container--center">
+    <article class="content__primary" role="article">
+      {% assign elementsByType = site.elements | sort:"order" | group_by:"type" %} 
+      {%  for type in elementsByType %}
+        <section class="categorys pad-tb">
+        <h2 id="{{ type.name | slugify }}" class="categorys__title">{{ type.name | capitalize }}</h2>
+          {% for entry in type.items %} 
+            {% include element.html %} 
+          {% endfor %} 
+        <a href="#top">[Back to Top]</a>
+        </section>
+      {% endfor %}
+    </article>
 
-  <article class="page__content" role="article">
-    {% assign elementsByType = site.elements | sort:"order" | group_by:"type" %} 
-    {%  for type in elementsByType %}
-      <section class="categorys pad-tb">
-      <h2 id="{{ type.name | slugify }}" class="categorys__title">{{ type.name | capitalize }}</h2>
-        {% for entry in type.items %} 
-          {% include element.html %} 
-        {% endfor %} 
-      <a href="#top">[Back to Top]</a>
-      </section>
-    {% endfor %}
-  </article>
+    <aside class="content__tertiary pad-all" role="complementary">
 
-  <aside class="page__aside pad-all" role="complementary">
-
-    <nav role="navigation" class="nav">
-        <h2>Table of content</h2>
-        {% assign elementsByType = site.elements | sort:"order" | group_by:"type"  %} 
-        {% for type in elementsByType %}
-        <ul class="nav__list">
-          <li>
-            <a href="#{{ type.name | slugify }}">{{ type.name | capitalize }}</a>
-            <ul class="nav__list">
-            {% for entry in type.items %}
-              <li>
-                <a href="#{{ entry.title | slugify }}">{{ entry.title }}</a>
-              </li>
-            {% endfor %}
-            </ul>
-          </li>
-        </ul>
-        {% endfor %}
-    </nav>
-        
-  </aside>
-
+      <nav role="navigation" class="nav">
+          <h2>Table of content</h2>
+          {% assign elementsByType = site.elements | sort:"order" | group_by:"type"  %} 
+          {% for type in elementsByType %}
+          <ul class="nav__list">
+            <li>
+              <a href="#{{ type.name | slugify }}">{{ type.name | capitalize }}</a>
+              <ul class="nav__list">
+              {% for entry in type.items %}
+                <li>
+                  <a href="#{{ entry.title | slugify }}">{{ entry.title }}</a>
+                </li>
+              {% endfor %}
+              </ul>
+            </li>
+          </ul>
+          {% endfor %}
+      </nav>
+          
+    </aside>
+  </div>
 </main>
 
-<footer class="page__footer">
+<footer class="site-footer">
   <div class="container container--center">
       <small>
           Made with love in the Gambia By <a href="http://twitter.com/acamarian">A. Camarian</a> - An open source side project. 
@@ -63,3 +63,4 @@ layout: home
       </small>
   </div>
 </footer>
+
