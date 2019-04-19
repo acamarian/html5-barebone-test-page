@@ -19,13 +19,6 @@
  * Main and Sectioning Roots
  */
 html {
-    @include respond-to(screen-s)  {
-        font-size: 1.125rem;
-    }
-    @include respond-to(screen-l) {
-        font-size: 1.25rem;
-    }
-
     font-size: $base-font-size;
     line-height: $base-line-height;
     text-rendering: optimizeLegibility;

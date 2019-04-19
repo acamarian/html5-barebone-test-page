@@ -43,13 +43,13 @@ $info:        $blue;
  */
 $baseline:        2; // 32 px
 $vr:              $baseline * 1rem; // vertical rhythm
-$base-font-size:  1rem;
+$base-font-size:  100%;
 
-$wrapper-min-width:           20em;     // 320px 
-$wrapper-max-width:           120em;    // 1920px
-$container-max-width:         64em;     // 1140px
-$container-max-width-small:   40em;     // 640px
-$container-max-width-large:   90em;     // 1440px
+$wrapper-min-width:           320px;     // 320px 
+$wrapper-max-width:           1920px;    // 1920px
+$container-max-width:         1140px;     // 1140px
+$container-max-width-small:   600px;     // 640px
+
  
 
 

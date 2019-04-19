@@ -13,22 +13,20 @@
 
 
 /**
- * Page and Page wrapper
+ * site wrapper
  */
-.page {
+.site-wrapper  {
+  @include center-page;
+  min-width: $wrapper-min-width;
+  max-width: $wrapper-max-width;
+}
 
-  &__wrapper  {
-    @include center-page;
-    min-width: $wrapper-min-width;
-    max-width: $wrapper-max-width;
-  }
- }
 
 /**
- * page__wrapper--adaptable
+ * site-wrapper--adaptable
  * This change its width size base on different screen sizes
  */
-.page__wrapper--adaptable {
+.site-wrapper--adaptable {
   @include respond-to(screen-s) {
     width: 90%;
   }
@@ -56,40 +54,38 @@
   max-width: $container-max-width-small;
 }
 
-.container--large {
-  max-width: $container-max-width-large;
-}
+
 
 
 
 /** 
  * Page landmarks
  */
-.page__header {
+.site-header {
   background-color: $primary;
   color: $foreground-on-primary;
 }
 
-.page__main {
+.content {
   
-  @include respond-to(mobile-s) {
+  @include respond-to(mobile-l) {
     display: flex;
   }
 }
 
-.page__content {
-  @include respond-to(mobile-s) {
+.content__primary {
+  @include respond-to(mobile-l) {
     width: 60%;
   }
 }
 
-.page__aside {
-  @include respond-to(mobile-s) {
+.content__secondary {
+  @include respond-to(mobile-l) {
     width: 40%;
   }
 }
 
-.page__footer {
+.site-footer {
   background-color: $primary;
   color: $foreground-on-primary;
   padding: $vr*2 0;
